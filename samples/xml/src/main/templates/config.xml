@@ -1,0 +1,4 @@
+<server>
+    <url>@SERVER_URL@</url>
+    <port>@SERVER_PORT@</port>
+</server>
