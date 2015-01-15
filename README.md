@@ -21,13 +21,15 @@ replaces tags with properties for each configurations.
 
 build.gradle
 
-```
+```groovy
 buildscript {
     repositories {
-        mavenCentral()
+        maven {
+            url uri('https://oss.sonatype.org/content/repositories/snapshots/')
+        }
     }
     dependencies {
-        classpath 'com.github.ksoichiro:gradle-replacer:+'
+        classpath 'com.github.ksoichiro:gradle-replacer:0.1.0-SNAPSHOT'
     }
 }
 
@@ -45,7 +47,7 @@ replacer {
 
 src/main/templates/config.xml
 
-```
+```xml
 <server>
     <url>@SERVER_URL@</url>
     <port>@SERVER_PORT@</port>
@@ -68,15 +70,15 @@ SERVER_PORT=9901
 
 ### Execution
 
-```
-$ ./gradlew generate
+```sh
+$ ./gradlew replacerGenerate
 ```
 
 ### Outputs
 
 build/outputs/dev/config.xml
 
-```
+```xml
 <server>
     <url>ssl://192.168.100.56</url>
     <port>9900</port>
@@ -85,7 +87,7 @@ build/outputs/dev/config.xml
 
 build/outputs/production/config.xml
 
-```
+```xml
 <server>
     <url>ssl://example.com</url>
     <port>9901</port>
