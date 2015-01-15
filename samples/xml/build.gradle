@@ -4,6 +4,10 @@ buildscript {
         maven {
             url uri('../repo')
         }
+        // SNAPSHOT
+        //maven {
+        //    url uri('https://oss.sonatype.org/content/repositories/snapshots/')
+        //}
     }
     dependencies {
         classpath 'com.github.ksoichiro:gradle-replacer:+'
