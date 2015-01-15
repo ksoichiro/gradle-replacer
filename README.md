@@ -103,6 +103,7 @@ build/outputs/production/config.xml
   The tool should be:
     * Easy to set up
     * Easy to maintain configurations
+
   In my team, most project members have Java environment,
   so I thought the Gradle plugin is the best for that purpose.
 * Gradle (groovy) has template engines,
