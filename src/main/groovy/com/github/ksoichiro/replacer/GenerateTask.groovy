@@ -5,18 +5,20 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
 class GenerateTask extends DefaultTask {
+    private static final String DEFAULT_PROPFILENAME = "build.properties"
+
     @TaskAction
     def exec() {
         project.replacer.configurations.each { Configuration config ->
             // Read properties to replace
             def props = new Properties()
-            def mainPropFile = project.file("src/main/build.properties")
+            def mainPropFile = project.file("src/main/${DEFAULT_PROPFILENAME}")
             if (mainPropFile.exists()) {
                 mainPropFile.withInputStream { stream ->
                     props.load(stream)
                 }
             }
-            def configPropFile = project.file("src/${config.name}/build.properties")
+            def configPropFile = project.file("src/${config.name}/${DEFAULT_PROPFILENAME}")
             if (configPropFile.exists()) {
                 configPropFile.withInputStream { stream ->
                     def configProps = new Properties()
