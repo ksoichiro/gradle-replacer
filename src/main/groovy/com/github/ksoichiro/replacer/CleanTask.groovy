@@ -6,11 +6,13 @@ import org.gradle.api.tasks.TaskAction
 class CleanTask extends DefaultTask {
     @TaskAction
     def exec() {
-        project.replacer.configurations.each { Configuration config ->
-            def outputDir = new File(project.buildDir, "outputs/${config.name}")
-            if (outputDir.exists()) {
-                project.delete(outputDir)
-            }
+        def outputDir = new File(project.buildDir, "outputs")
+        if (outputDir.exists()) {
+            project.delete(outputDir)
+        }
+        def archiveDir = new File(project.buildDir, "archives")
+        if (archiveDir.exists()) {
+            project.delete(archiveDir)
         }
     }
 }
