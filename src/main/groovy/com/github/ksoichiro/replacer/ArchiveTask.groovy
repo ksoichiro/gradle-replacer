@@ -31,6 +31,14 @@ class ArchiveTask extends DefaultTask {
                             compression: "gzip"
                     ).execute()
                     break
+                case "bzip2":
+                    project.ant.tar(
+                            destfile: "${project.buildDir}/${replacer.archiveDir}/${id}/${config.name}-${id}.tar.bz2",
+                            basedir: outputBaseDir,
+                            includes: "${config.name}/**/*",
+                            compression: "bzip2"
+                    ).execute()
+                    break
                 default:
                     throw new GradleException("Unsupported archive type: ${replacer.archiveType}")
             }
