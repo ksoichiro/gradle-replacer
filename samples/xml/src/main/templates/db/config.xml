@@ -1,0 +1,3 @@
+<server>
+    <db_instance>@DB_INSTANCE_NAME@</db_instance>
+</server>
