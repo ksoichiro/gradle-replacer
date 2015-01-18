@@ -28,10 +28,21 @@ class GenerateTask extends DefaultTask {
             }
 
             // Copy and replace
-            project.copy {
-                from "src/main/templates"
-                into "${project.buildDir}/outputs/${config.name}"
-                filter(ReplaceTokens, tokens: props)
+            [
+                    "src/main/templates",
+                    "src/${config.name}/templates",
+            ].each { fromFiles ->
+                if (project.file(fromFiles).exists()) {
+                    project.copy {
+                        from fromFiles
+                        ReplacerPluginExtension replacer = project.replacer
+                        if (replacer.excludes && 0 < replacer.excludes.size()) {
+                            exclude replacer.excludes
+                        }
+                        into "${project.buildDir}/outputs/${config.name}"
+                        filter(ReplaceTokens, tokens: props)
+                    }
+                }
             }
         }
     }

@@ -17,6 +17,8 @@ buildscript {
 apply plugin: 'com.github.ksoichiro.replacer'
 
 replacer {
+    excludes = [ ".gitkeep" ]
+
     configurations {
         dev
         production

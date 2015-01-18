@@ -5,7 +5,7 @@ import org.gradle.api.Project
 
 class ReplacerPluginExtension {
     NamedDomainObjectContainer<Configuration> configurations
-
+    String[] excludes
     Project project
 
     ReplacerPluginExtension(Project project,
