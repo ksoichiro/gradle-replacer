@@ -10,6 +10,7 @@ class ReplacerPluginExtension {
     String templateDir = "templates"
     String outputDir = "outputs"
     String archiveDir = "archives"
+    String properties = "build.properties"
     String[] excludes
     Project project
 

@@ -5,8 +5,6 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
 class GenerateTask extends DefaultTask {
-    private static final String DEFAULT_PROPFILENAME = "build.properties"
-
     @TaskAction
     def exec() {
         project.replacer.configurations.each { Configuration config ->
@@ -14,13 +12,13 @@ class GenerateTask extends DefaultTask {
 
             // Read properties to replace
             def props = new Properties()
-            def mainPropFile = project.file("${replacer.srcDir}/${replacer.srcMainDir}/${DEFAULT_PROPFILENAME}")
+            def mainPropFile = project.file("${replacer.srcDir}/${replacer.srcMainDir}/${replacer.properties}")
             if (mainPropFile.exists()) {
                 mainPropFile.withInputStream { stream ->
                     props.load(stream)
                 }
             }
-            def configPropFile = project.file("${replacer.srcDir}/${config.name}/${DEFAULT_PROPFILENAME}")
+            def configPropFile = project.file("${replacer.srcDir}/${config.name}/${replacer.properties}")
             if (configPropFile.exists()) {
                 configPropFile.withInputStream { stream ->
                     def configProps = new Properties()
