@@ -5,6 +5,11 @@ import org.gradle.api.Project
 
 class ReplacerPluginExtension {
     NamedDomainObjectContainer<Configuration> configurations
+    String srcDir = "src"
+    String srcMainDir = "main"
+    String templateDir = "templates"
+    String outputDir = "outputs"
+    String archiveDir = "archives"
     String[] excludes
     Project project
 
