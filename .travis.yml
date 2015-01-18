@@ -7,3 +7,5 @@ jdk:
 script:
   - ./gradlew clean assemble cobertura uploadArchives
   - cd samples/xml && ./gradlew replacerClean replacerGenerate replacerArchive
+after_success:
+  - ./gradlew coveralls

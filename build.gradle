@@ -1,5 +1,6 @@
 plugins {
     id 'net.saliman.cobertura' version '2.2.5'
+    id 'com.github.kt3k.coveralls' version '2.1.0'
 }
 
 apply plugin: 'groovy'
@@ -53,6 +54,7 @@ install {
 
 cobertura {
     coverageFormats = ['html', 'xml']
+    coverageSourceDirs = sourceSets.main.groovy.srcDirs
 }
 
 afterEvaluate { project ->
