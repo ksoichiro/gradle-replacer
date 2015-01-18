@@ -1,0 +1,9 @@
+language: groovy
+
+jdk:
+  - openjdk6
+  - openjdk7
+
+script:
+  - ./gradlew clean assemble uploadArchives
+  - cd samples/xml && ./gradlew replacerClean replacerGenerate replacerArchive
