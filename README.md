@@ -2,7 +2,7 @@ gradle-replacer
 ===
 
 [![Build Status](http://img.shields.io/travis/ksoichiro/gradle-replacer.svg?style=flat)](https://travis-ci.org/ksoichiro/gradle-replacer)
-[![Maven Central](http://img.shields.io/maven-central/v/com.github.ksoichiro/gradle-replacer.svg?style=flat)](https://github.com/ksoichiro/gradle-replacer/releases/latest)
+[![Maven Central](http://img.shields.io/maven-central/v/com.github.ksoichiro/gradle-replacer.svg?style=flat)](http://search.maven.org/#search|ga|1|a:"gradle-replacer")
 [![Coverage Status](https://coveralls.io/repos/ksoichiro/gradle-replacer/badge.svg?branch=master)](https://coveralls.io/r/ksoichiro/gradle-replacer?branch=master)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat)](https://github.com/ksoichiro/gradle-replacer/blob/master/LICENSE)
 
@@ -199,4 +199,4 @@ replacer {
 
 Copyright (c) 2015 Soichiro Kashima  
 Licensed under MIT license.  
-See the bundled [LICENSE](https://github.com/ksoichiro/gradle-android-git/blob/master/LICENSE) file for details.
+See the bundled [LICENSE](https://github.com/ksoichiro/gradle-replacer/blob/master/LICENSE) file for details.
