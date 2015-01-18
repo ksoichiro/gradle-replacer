@@ -2,6 +2,7 @@ gradle-replacer
 ===
 
 [![Build Status](http://img.shields.io/travis/ksoichiro/gradle-replacer.svg?style=flat)](https://travis-ci.org/ksoichiro/gradle-replacer)
+[![Coverage Status](https://coveralls.io/repos/ksoichiro/gradle-replacer/badge.svg?branch=master)](https://coveralls.io/r/ksoichiro/gradle-replacer?branch=master)
 
 Gradle plugin that provides a minimalistic template engine feature.
 
