@@ -8,7 +8,8 @@ class ReplacerPlugin implements Plugin<Project> {
     void apply(Project project) {
         def configurations = project.container(Configuration)
         project.extensions.create('replacer', ReplacerPluginExtension, project, configurations)
-        project.task('replacerGenerate', type: GenerateTask)
+        def replacerGenerate = project.task('replacerGenerate', type: GenerateTask)
         project.task('replacerClean', type: CleanTask)
+        project.task('replacerArchive', type: ArchiveTask, dependsOn: replacerGenerate)
     }
 }
