@@ -1,3 +1,7 @@
+plugins {
+    id 'net.saliman.cobertura' version '2.2.5'
+}
+
 apply plugin: 'groovy'
 apply plugin: 'maven'
 apply plugin: 'signing'
@@ -45,6 +49,10 @@ install {
     repositories.mavenInstaller {
         pom.artifactId = POM_ARTIFACT_ID
     }
+}
+
+cobertura {
+    coverageFormats = ['html', 'xml']
 }
 
 afterEvaluate { project ->
