@@ -11,6 +11,7 @@ class ReplacerPluginExtension {
     String outputDir = "outputs"
     String archiveDir = "archives"
     String properties = "build.properties"
+    String archiveIdFormat = "yyyyMMddHHmmss"
     String[] excludes
     Project project
 

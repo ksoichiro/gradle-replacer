@@ -6,8 +6,8 @@ import org.gradle.api.tasks.TaskAction
 class ArchiveTask extends DefaultTask {
     @TaskAction
     def exec() {
-        def id = new Date().format('yyyyMMddHHmmss')
         ReplacerPluginExtension replacer = project.replacer
+        def id = new Date().format(replacer.archiveIdFormat)
         replacer.configurations.each { Configuration config ->
             def outputBaseDir = new File(project.buildDir, replacer.outputDir)
             def outputDir = new File(outputBaseDir, "${config.name}")
