@@ -15,7 +15,7 @@ replaces tags with properties for each configurations.
     build/outputs/dev/config.xml
     build/outputs/production/config.xml
 
-## Usage and example
+## Example
 
 ### Build script
 
@@ -92,6 +92,34 @@ build/outputs/production/config.xml
     <url>ssl://example.com</url>
     <port>9901</port>
 </server>
+```
+
+
+## Usage
+
+### Clean
+
+Deletes `build/outputs` and `build/archives` directory.
+
+```
+$ ./gradlew replacerClean
+```
+
+### Generate (Copy and replace)
+
+Copies source files and replace tags.
+
+```
+$ ./gradlew replacerGenerate
+```
+
+### Archive
+
+Archives the generated sources.  
+This depends on `replacerGenerate` task.
+
+```
+$ ./gradlew replacerArchive
 ```
 
 ## Why?
