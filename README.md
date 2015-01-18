@@ -4,6 +4,7 @@ gradle-replacer
 [![Build Status](http://img.shields.io/travis/ksoichiro/gradle-replacer.svg?style=flat)](https://travis-ci.org/ksoichiro/gradle-replacer)
 [![Maven Central](http://img.shields.io/maven-central/v/com.github.ksoichiro/gradle-replacer.svg?style=flat)](https://github.com/ksoichiro/gradle-replacer/releases/latest)
 [![Coverage Status](https://coveralls.io/repos/ksoichiro/gradle-replacer/badge.svg?branch=master)](https://coveralls.io/r/ksoichiro/gradle-replacer?branch=master)
+[![License](http://img.shields.io/:license-MIT-blue.svg?style=flat)](https://github.com/ksoichiro/gradle-replacer/blob/master/LICENSE)
 
 Gradle plugin that provides a minimalistic template engine feature.
 
