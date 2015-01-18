@@ -97,7 +97,9 @@ build/outputs/production/config.xml
 
 ## Usage
 
-### Clean
+### Tasks
+
+#### Clean
 
 Deletes `build/outputs` and `build/archives` directory.
 
@@ -105,7 +107,7 @@ Deletes `build/outputs` and `build/archives` directory.
 $ ./gradlew replacerClean
 ```
 
-### Generate (Copy and replace)
+#### Generate (Copy and replace)
 
 Copies source files and replace tags.
 
@@ -113,13 +115,59 @@ Copies source files and replace tags.
 $ ./gradlew replacerGenerate
 ```
 
-### Archive
+#### Archive
 
 Archives the generated sources.  
 This depends on `replacerGenerate` task.
 
 ```
 $ ./gradlew replacerArchive
+```
+
+### Configurations
+
+```groovy
+replacer {
+    // Definition of the targets:
+    // e.g. develop, staging, production
+    // You need to define them at least one.
+    configurations {
+        // These are treated as closures.
+        // You can omit {}.
+        dev {
+        }
+        production
+    }
+
+    // Source directory
+    srcDir = "src"
+
+    // Base source directory under srcDir
+    srcMainDir = "main"
+
+    // Template files directory under srcMainDir
+    // or srcDir/<configuration name>/
+    templateDir = "templates"
+
+    // Generated files directory under build
+    outputDir = "outputs"
+
+    // Archived files directory under build
+    archiveDir = "archives"
+
+    // Properties file directory under templateDir
+    properties = "build.properties"
+
+    // DateFormat used for directory name under archiveDir
+    archiveIdFormat = "yyyyMMddHHmmss"
+
+    // Archive types for "replacerArchive" task.
+    // Available type: zip, gzip, bzip2
+    archiveType = "zip"
+
+    // Files to be excluded
+    excludes = [ ".gitkeep", ".swp" ]
+}
 ```
 
 ## Why?
