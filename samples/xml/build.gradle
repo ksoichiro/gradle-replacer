@@ -18,6 +18,7 @@ apply plugin: 'com.github.ksoichiro.replacer'
 
 replacer {
     excludes = [ ".gitkeep" ]
+    archiveType = "gzip"
 
     configurations {
         dev

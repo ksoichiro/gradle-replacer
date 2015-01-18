@@ -12,6 +12,7 @@ class ReplacerPluginExtension {
     String archiveDir = "archives"
     String properties = "build.properties"
     String archiveIdFormat = "yyyyMMddHHmmss"
+    String archiveType = "zip"
     String[] excludes
     Project project
 
