@@ -41,7 +41,6 @@ class ArchiveTask extends DefaultTask {
                     break
                 default:
                     throw new GradleException("Unsupported archive type: ${replacer.archiveType}")
-                    break
             }
         }
     }
