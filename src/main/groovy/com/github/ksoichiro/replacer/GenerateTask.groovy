@@ -31,16 +31,14 @@ class GenerateTask extends DefaultTask {
             [
                     "${replacer.srcDir}/${replacer.srcMainDir}/${replacer.templateDir}",
                     "${replacer.srcDir}/${config.name}/${replacer.templateDir}",
-            ].each { fromFiles ->
-                if (project.file(fromFiles).exists()) {
-                    project.copy {
-                        from fromFiles
-                        if (replacer.excludes && 0 < replacer.excludes.size()) {
-                            exclude replacer.excludes
-                        }
-                        into "${project.buildDir}/${replacer.outputDir}/${config.name}"
-                        filter(ReplaceTokens, tokens: props)
+            ].findAll { project.file(it).exists() }.each { fromFiles ->
+                project.copy {
+                    from fromFiles
+                    if (replacer.excludes && 0 < replacer.excludes.size()) {
+                        exclude replacer.excludes
                     }
+                    into "${project.buildDir}/${replacer.outputDir}/${config.name}"
+                    filter(ReplaceTokens, tokens: props)
                 }
             }
         }
